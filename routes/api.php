@@ -2,7 +2,7 @@
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
-
+use App\Http\Controllers\UserController;
 /*
 |--------------------------------------------------------------------------
 | API Routes
@@ -21,3 +21,6 @@ Route::get('/index',function(){
     $test ="helo word";
     return $test;
 });
+//Route::resource('user', UserController::class);
+Route::get('user/list',[UserController::class, 'index']);
+Route::post('user/store',[UserController::class,'store']);
