@@ -59,7 +59,6 @@ class UserController extends Controller
     {
         $user = User::find($id);
         $user->update($request->all());
-
         return response()->json(['error'=>'false','status'=>'200','data'=>$user]);
     }
 
@@ -71,6 +70,14 @@ class UserController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $result = User::destroy($id);
+        if($result === 1):
+
+            return response()->json(['error'=>false,'status'=>200,'messege'=>'operacao realizada com sucesso']);
+        endif;
+        if($result !== 1):
+            return response()->json(['error'=>true,'status'=>402,'messege'=>'falha']);
+        endif;
+
     }
 }

@@ -25,3 +25,4 @@ Route::get('/index',function(){
 Route::get('user/list',[UserController::class, 'index']);
 Route::post('user/store',[UserController::class,'store']);
 Route::put('user/{id}/update',[UserController::class,'update']);
+Route::delete('user/{id}/destroy',[UserController::class,'destroy']);
