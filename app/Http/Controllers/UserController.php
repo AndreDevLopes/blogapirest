@@ -14,7 +14,9 @@ class UserController extends Controller
      */
     public function index()
     {
-        return response()->json(['teste'=>'testendo']);
+        $users = User::all();
+
+        return response()->json(['erro'=>'false','status'=>200,'data'=>$users]);
     }
 
     /**
@@ -55,7 +57,10 @@ class UserController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $user = User::find($id);
+        $user->update($request->all());
+
+        return response()->json(['error'=>'false','status'=>'200','data'=>$user]);
     }
 
     /**
