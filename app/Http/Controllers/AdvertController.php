@@ -15,7 +15,13 @@ class AdvertController extends Controller
      */
     public function index()
     {
-        //
+        $adverts = Advert::all();
+        if($adverts):
+            return response()->json(['error'=>false,'status'=>200,'data'=>$adverts]);
+        else:
+            return response()->json(['error'=>true,'status'=>400,'messege'=>'nao possui anuncios']);
+        endif;
+
     }
 
     /**

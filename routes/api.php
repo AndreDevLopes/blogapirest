@@ -29,3 +29,4 @@ Route::put('user/{id}/update',[UserController::class,'update']);
 Route::delete('user/{id}/destroy',[UserController::class,'destroy']);
 //rotas para anuncios
 Route::post('advert/{id}/store',[AdvertController::class,'store']);
+Route::get('advert/list',[AdvertController::class,'index']);
