@@ -3,6 +3,7 @@
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\UserController;
+use App\Http\Controllers\AdvertController;
 /*
 |--------------------------------------------------------------------------
 | API Routes
@@ -26,3 +27,5 @@ Route::get('user/list',[UserController::class, 'index']);
 Route::post('user/store',[UserController::class,'store']);
 Route::put('user/{id}/update',[UserController::class,'update']);
 Route::delete('user/{id}/destroy',[UserController::class,'destroy']);
+//rotas para anuncios
+Route::post('advert/{id}/store',[AdvertController::class,'store']);
